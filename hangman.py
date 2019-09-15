@@ -1,10 +1,9 @@
 import random
 # Settings
-max_attempts = 7
 failed_attempts = 0
 tried_letters = []
 print("Hello there. This is Hangman game.")
-print("You have maximum of " + str(max_attempts) + " lives to guess the word.")
+print("You have maximum of 7 tries to guess the word.")
 while True:
     print("What theme do you want to play?")
     try:
@@ -23,7 +22,7 @@ while True:
     secret_word = secret_word.replace(",", "").lower().replace(".","")
     guessed = [""] * len(secret_word)
     while True:
-        if failed_attempts < max_attempts:
+        if failed_attempts < 7:
             guessed_str = ''.join(guessed)
             count_loop = 0
             print(guessed_str)
